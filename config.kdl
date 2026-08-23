@@ -59,8 +59,7 @@ hotkey-overlay {
 
 spawn-sh-at-startup "swaybg -i ~/Pictures/backgrounds/dots.png"
 
-// TODO: Make custom waybar config that lives in this directory
-spawn-at-startup "waybar"
+spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc 2>&1 > ~/.config/niri/waybar.log"
 
 spawn-at-startup "discord"
 spawn-sh-at-startup "spotify-launcher || spotify"
@@ -133,8 +132,6 @@ binds {
 
     // Monitor Focus
     Mod+Ctrl+H     { focus-monitor-left; }
-    Mod+Ctrl+J     { focus-monitor-down; }
-    Mod+Ctrl+K     { focus-monitor-up; }
     Mod+Ctrl+L     { focus-monitor-right; }
 
     // Monitor Move

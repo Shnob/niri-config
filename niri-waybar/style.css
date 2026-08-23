@@ -1,0 +1,62 @@
+@define-color bg_color #161320;
+@define-color fg_color #D780FF;
+@define-color debug_color #FF0000;
+
+* {
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    font-family: "JetbrainsMono Nerd Font";
+    font-size: 24px;
+    font-weight: bold;
+    min-height: 10px;
+    margin: 0px;
+    padding-top: 0px;
+}
+
+window#waybar {
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+widget > .module {
+    color: @fg_color;
+    border-style: solid;
+    border-color: @fg_color;
+    border-radius: 0px;
+    border-width: 0px 0px 3px 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#workspaces {
+    border: none;
+}
+
+#workspaces button {
+    font-size: 26px;
+    color: @fg_color;
+    border-style: solid hidden solid hidden;
+    border-color: transparent;
+    border-radius: 0px;
+    border-width: 3px 0px 3px 0px;
+}
+
+#workspaces button.visible {
+    border-color: transparent transparent @fg_color transparent;
+}
+
+#workspaces button.active {
+    border-color: @fg_color transparent @fg_color transparent;
+}
+
+#window {
+    border: none;
+    margin-bottom: 0px;
+}
+
+#mpris, #window>label {
+    border: none;
+    margin-top: 0px;
+    margin-bottom: 6px;
+    font-size: 18px;
+}

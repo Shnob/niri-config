@@ -1,0 +1,87 @@
+{
+	"layer": "bottom",
+	"modules-left": ["niri/workspaces", "mpris"],
+	"modules-center": ["wireplumber","custom/cpu","memory","disk","custom/docker","clock#date","custom/worldclock","clock#time"],
+	"modules-right": ["niri/window","tray"],
+    "position": "bottom",
+    "margin": "0px 0px 0px 0px",
+
+    "niri/workspaces": {
+    },
+    "mpris": {
+        "format": "{status_icon} {dynamic}",
+        "tooltip-format": "{status_icon} [{position}/{length}] {title} - {artist}",
+        "interval": 1,
+        "max-length": 120,
+        "status-icons": {
+            "playing": " ",
+            "paused": " ",
+            "stopped": " "
+        },
+        "dynamic-order": [
+            "position",
+            "length",
+            "title",
+            "artist"
+        ]
+    },
+	
+	"wireplumber": {
+		"tooltip": true,
+		"scroll-step": 5,
+		"format": "{icon}  {volume}%",
+		"format-muted": "󰝟  {volume}%",
+		"on-click": "pamixer -t",
+		"format-icons": {
+			"default": ["󰕾"]
+		}
+	},
+    "custom/cpu": {
+        "interval": 1,
+        "exec": "$HOME/.config/niri/niri-waybar/cpuusage.sh"
+    },
+    "memory": {
+        "interval": 1,
+        "format": "  {used:5.2f}GiB / {total:5.2f}GiB"
+    },
+    "disk": {
+        "format": "  󱐕 {specific_used:0.0f}GiB : 󱐖 {specific_free:0.0f}GiB",
+        "unit": "GiB",
+        "path": "/"
+    },
+    "custom/docker": {
+        "interval": 1,
+        "exec": "$HOME/.config/niri/niri-waybar/docker.sh",
+        "exec-if": "$HOME/.config/niri/niri-waybar/docker_enabled.sh"
+    },
+    "clock#date": {
+        "format": "  {:%Y-%m-%d}",
+        "interval": 1
+    },
+    "custom/worldclock": {
+        "exec": "$HOME/.config/niri/niri-waybar/worldclock.sh",
+        "exec-if": "test -f $HOME/.config/niri/niri-waybar/selected_timezone",
+        "format": "󰇧  {}",
+        "interval": 1
+    },
+    "clock#time": {
+        "format": "  {:%T}",
+        "interval": 1
+    },
+
+    "niri/window": {
+        "format": "{title}",
+        "separate-outputs": true
+    },
+	"tray": {
+		"icon-size":20,
+		"spacing": 10,
+        "interval": 1,
+        "icons": {
+            "blueman": "/home/jake/.config/waybar/icons/blueman.png",
+            "discord": "/home/jake/.config/waybar/icons/discord.png",
+            "nm-applet": "/home/jake/.config/waybar/icons/nm-applet.png",
+            "steam": "/home/jake/.config/waybar/icons/steam.png"
+        }
+	}
+}
