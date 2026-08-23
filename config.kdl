@@ -74,14 +74,8 @@ hotkey-overlay {
     skip-at-startup
 }
 
-spawn-sh-at-startup "swaybg -i ~/.config/niri/default-background.png"
-
-spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc -s ~/.config/niri/niri-waybar/style.css 2>&1 > ~/.config/niri/waybar.log"
-
 spawn-at-startup "discord"
 spawn-sh-at-startup "spotify-launcher || spotify"
-
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
 window-rule {
     // Open Discord in correct location
@@ -112,6 +106,14 @@ window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
     draw-border-with-background false
+}
+
+window-rule {
+    // Floating Noctalia settings window.
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
 }
 
 gestures {
