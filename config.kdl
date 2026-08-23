@@ -5,6 +5,13 @@ input {
         numlock
     }
 
+    touchpad {
+        tap
+
+        natural-scroll
+        scroll-factor 0.5
+    }
+
     warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="95%"
 }
@@ -24,6 +31,14 @@ output "Lenovo Group Limited L28u-35 U1AKC209" {
     scale 1
     transform "normal"
     position x=3840 y=0
+}
+
+// Laptop
+output "Chimei Innolux Corporation 0x15DC Unknown" {
+    mode "1366x768@60.003"
+    scale 1.0
+    transform "normal"
+    position x=0 y=0
 }
 
 layout {
@@ -59,7 +74,7 @@ hotkey-overlay {
 
 spawn-sh-at-startup "swaybg -i ~/Pictures/backgrounds/dots.png"
 
-spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc 2>&1 > ~/.config/niri/waybar.log"
+spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc -s ~/.config/niri/niri-waybar/style.css 2>&1 > ~/.config/niri/waybar.log"
 
 spawn-at-startup "discord"
 spawn-sh-at-startup "spotify-launcher || spotify"
