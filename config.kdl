@@ -242,3 +242,5 @@ binds {
 
     Mod+Shift+E { quit; }
 }
+
+spawn-at-startup "noctalia"
