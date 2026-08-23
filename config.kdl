@@ -79,6 +79,8 @@ spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc -s ~/.con
 spawn-at-startup "discord"
 spawn-sh-at-startup "spotify-launcher || spotify"
 
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+
 window-rule {
     // Open Discord in correct location
     match app-id="discord"
