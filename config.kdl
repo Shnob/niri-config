@@ -79,6 +79,14 @@ spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc -s ~/.con
 spawn-at-startup "discord"
 spawn-sh-at-startup "spotify-launcher || spotify"
 
+// TODO: Eventually suspend if not plugged in.
+//       Maybe move swayidle config?
+spawn-at-startup "swayidle" "-w" \
+    "timeout" "600" "swaylock -f" \
+    "timeout" "610" "niri msg action power-off-monitors" \
+    "resume" "niri msg action power-on-monitors"
+
+
 window-rule {
     // Open Discord in correct location
     match app-id="discord"
