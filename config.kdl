@@ -86,6 +86,7 @@ spawn-at-startup "swayidle" "-w" \
     "timeout" "610" "niri msg action power-off-monitors" \
     "resume" "niri msg action power-on-monitors"
 
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
 window-rule {
     // Open Discord in correct location
