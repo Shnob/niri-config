@@ -72,7 +72,7 @@ hotkey-overlay {
     skip-at-startup
 }
 
-spawn-sh-at-startup "swaybg -i ~/Pictures/backgrounds/dots.png"
+spawn-sh-at-startup "swaybg -i ~/.config/niri/default-background.png"
 
 spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc -s ~/.config/niri/niri-waybar/style.css 2>&1 > ~/.config/niri/waybar.log"
 
