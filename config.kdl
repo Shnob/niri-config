@@ -59,9 +59,6 @@ hotkey-overlay {
 
 spawn-sh-at-startup "swaybg -i ~/Pictures/backgrounds/dots.png"
 
-// TODO: Make custom waybar config that lives in this directory
-spawn-at-startup "waybar"
-
 spawn-at-startup "discord"
 spawn-sh-at-startup "spotify-launcher || spotify"
 
