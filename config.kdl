@@ -213,3 +213,5 @@ binds {
 
     Mod+Shift+E { quit; }
 }
+
+include "dms/cursor.kdl"
