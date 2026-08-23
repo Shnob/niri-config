@@ -18,19 +18,21 @@ input {
 
 // PC Left Monitor
 output "Lenovo Group Limited L28u-35 U1AKH578" {
-    mode "3840x2160@59.997"
+    mode "3840x2160"
     scale 1
     transform "normal"
     position x=0 y=0
     focus-at-startup
+    variable-refresh-rate on-demand=true
 }
 
 // PC Right Monitor
 output "Lenovo Group Limited L28u-35 U1AKC209" {
-    mode "3840x2160@59.997"
+    mode "3840x2160"
     scale 1
     transform "normal"
     position x=3840 y=0
+    variable-refresh-rate on-demand=true
 }
 
 // Laptop
