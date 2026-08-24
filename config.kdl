@@ -61,7 +61,7 @@ layout {
 
         width 4
 
-        active-color "#D780FF"
+        active-color "#32E38E"
 
         inactive-color "#505050"
     }
