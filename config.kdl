@@ -140,9 +140,6 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true   { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
-    Mod+W repeat=false { toggle-overview; }
-    Mod+XF86TouchpadToggle repeat=false { toggle-overview; }
-
     Mod+Shift+Q repeat=false { close-window; }
 
     // Focus
@@ -208,7 +205,7 @@ binds {
 
     // Column Width
     Mod+R       { switch-preset-column-width; }
-    Mod+Shift+R { set-column-width "0.5"; }
+    Mod+Shift+R { set-column-width "50%"; }
     Mod+Minus   { set-column-width "-10%"; }
     Mod+Equal   { set-column-width "+10%"; }
 
@@ -221,6 +218,10 @@ binds {
     Mod+Shift+F { fullscreen-window; }
     Mod+M       { maximize-window-to-edges; }
     Mod+Ctrl+F  { expand-column-to-available-width; }
+
+    // Overview
+    Mod+W repeat=false { toggle-overview; }
+    Mod+XF86TouchpadToggle repeat=false { toggle-overview; }
 
     // Centering
     Mod+C       { center-column; }
