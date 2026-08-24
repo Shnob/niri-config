@@ -13,7 +13,7 @@ input {
     }
 
     warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="95%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // PC Left Monitor
@@ -208,7 +208,7 @@ binds {
 
     // Column Width
     Mod+R       { switch-preset-column-width; }
-    Mod+Shift+R { reset-window-height; }
+    Mod+Shift+R { set-column-width "0.5"; }
     Mod+Minus   { set-column-width "-10%"; }
     Mod+Equal   { set-column-width "+10%"; }
 
