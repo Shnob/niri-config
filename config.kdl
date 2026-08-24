@@ -176,7 +176,11 @@ binds {
     Mod+Ctrl+U { move-workspace-down; }
     Mod+Ctrl+I { move-workspace-up; }
 
-    // TODO: Do scroll wheel config here
+    // Scroll Controls
+    Mod+WheelScrollDown       cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp         cooldown-ms=150 { focus-workspace-up; }
+    Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-column-right; }
+    Mod+Shift+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
 
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
