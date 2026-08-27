@@ -124,8 +124,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+P hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Semicolon hotkey-overlay-title="Find a Window: fuzzel" { spawn-sh "/home/jake/.config/niri/niri-fuzzel-switcher/niri_fuzzel_switcher"; }
+    Mod+P hotkey-overlay-title="Run an Application" { spawn "rofi" "-show" "drun"; }
+    Mod+Semicolon hotkey-overlay-title="Find a Window" { spawn "rofi" "-show" "window"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"; }
