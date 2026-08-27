@@ -13,24 +13,26 @@ input {
     }
 
     warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="95%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // PC Left Monitor
 output "Lenovo Group Limited L28u-35 U1AKH578" {
-    mode "3840x2160@59.997"
+    mode "3840x2160"
     scale 1
     transform "normal"
     position x=0 y=0
     focus-at-startup
+    variable-refresh-rate on-demand=true
 }
 
 // PC Right Monitor
 output "Lenovo Group Limited L28u-35 U1AKC209" {
-    mode "3840x2160@59.997"
+    mode "3840x2160"
     scale 1
     transform "normal"
     position x=3840 y=0
+    variable-refresh-rate on-demand=true
 }
 
 // Laptop
@@ -129,8 +131,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+P hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Semicolon hotkey-overlay-title="Find a Window: fuzzel" { spawn-sh "/home/jake/.config/niri/niri-fuzzel-switcher/niri_fuzzel_switcher"; }
+    Mod+P hotkey-overlay-title="Run an Application" { spawn "rofi" "-show" "drun"; }
+    Mod+Semicolon hotkey-overlay-title="Find a Window" { spawn "rofi" "-show" "window"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"; }
@@ -144,9 +146,6 @@ binds {
 
     XF86MonBrightnessUp allow-when-locked=true   { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-
-    Mod+W repeat=false { toggle-overview; }
-    Mod+XF86TouchpadToggle repeat=false { toggle-overview; }
 
     Mod+Shift+Q repeat=false { close-window; }
 
@@ -184,7 +183,11 @@ binds {
     Mod+Ctrl+U { move-workspace-down; }
     Mod+Ctrl+I { move-workspace-up; }
 
-    // TODO: Do scroll wheel config here
+    // Scroll Controls
+    Mod+WheelScrollDown       cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp         cooldown-ms=150 { focus-workspace-up; }
+    Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-column-right; }
+    Mod+Shift+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
 
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
@@ -213,7 +216,7 @@ binds {
 
     // Column Width
     Mod+R       { switch-preset-column-width; }
-    Mod+Shift+R { reset-window-height; }
+    Mod+Shift+R { set-column-width "50%"; }
     Mod+Minus   { set-column-width "-10%"; }
     Mod+Equal   { set-column-width "+10%"; }
 
@@ -226,6 +229,10 @@ binds {
     Mod+Shift+F { fullscreen-window; }
     Mod+M       { maximize-window-to-edges; }
     Mod+Ctrl+F  { expand-column-to-available-width; }
+
+    // Overview
+    Mod+W repeat=false { toggle-overview; }
+    Mod+XF86TouchpadToggle repeat=false { toggle-overview; }
 
     // Centering
     Mod+C       { center-column; }
