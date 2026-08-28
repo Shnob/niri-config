@@ -254,3 +254,7 @@ binds {
 
     Mod+Shift+E { quit; }
 }
+
+environment {
+    QT_QPA_PLATFORMTHEME "qt6ct"
+}
