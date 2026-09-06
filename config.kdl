@@ -14,6 +14,8 @@ input {
 
     warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="0%"
+
+    disable-power-key-handling
 }
 
 // PC Left Monitor
@@ -141,6 +143,7 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     Mod+Shift+Q repeat=false { close-window; }
+    Mod+Ctrl+Shift+P repeat=false { power-off-monitors; }
 
     // Focus
     Mod+H    { focus-column-left; }
