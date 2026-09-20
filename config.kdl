@@ -78,9 +78,6 @@ spawn-sh-at-startup "swaybg -i ~/.config/niri/default-background.png"
 
 spawn-sh-at-startup "waybar -c ~/.config/niri/niri-waybar/config.jsonc -s ~/.config/niri/niri-waybar/style.css 2>&1 > ~/.config/niri/waybar.log"
 
-spawn-at-startup "discord"
-spawn-sh-at-startup "spotify-launcher || spotify"
-
 // TODO: Eventually suspend if not plugged in.
 //       Maybe move swayidle config?
 spawn-at-startup "swayidle" "-w" \
