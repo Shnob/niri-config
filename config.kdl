@@ -152,6 +152,8 @@ binds {
     Mod+L    { focus-column-right; }
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
+    Mod+F19  { focus-column-left; }
+    Mod+XF86Launch9  { focus-column-right; }
 
     // Move
     Mod+Shift+H    { move-column-left; }
@@ -228,7 +230,7 @@ binds {
 
     // Overview
     Mod+W repeat=false { toggle-overview; }
-    Mod+XF86TouchpadToggle repeat=false { toggle-overview; }
+    Mod+MouseMiddle repeat=false { toggle-overview; }
 
     // Centering
     Mod+C       { center-column; }
