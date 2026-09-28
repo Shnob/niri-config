@@ -60,3 +60,9 @@ widget > .module {
     margin-bottom: 6px;
     font-size: 18px;
 }
+
+#custom-wp-default-sink {
+    border-color: transparent;
+    margin-left: 0px;
+    margin-right: 8px;
+}
